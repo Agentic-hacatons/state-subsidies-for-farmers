@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Скоринг Субсидий</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              indrive: "#b2ff05",
+              darkbar: "#1a1a1a",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-100 font-sans text-gray-800 h-screen flex flex-col">
+    <header
+      class="bg-darkbar text-white p-4 shadow-md flex justify-between items-center"
+    >
+      <div class="text-2xl font-bold tracking-tight">
+        <span class="text-indrive">Gov</span>Tech AI
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="text-sm text-gray-400">Кабинет эксперта</span>
+        <div
+          class="h-8 w-8 bg-gray-600 rounded-full border-2 border-indrive"
+        ></div>
+      </div>
+    </header>
+
+    <main class="flex-1 p-8">
+      <div class="max-w-6xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6 text-gray-900">
+          Реестр заявок на субсидии
+        </h1>
+
+        <div
+          class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden"
+        >
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm whitespace-nowrap">
+              <thead
+                class="uppercase tracking-wider border-b-2 border-gray-100 bg-gray-50 text-gray-500"
+              >
+                <tr>
+                  <th scope="col" class="px-6 py-4 font-semibold">ID Заявки</th>
+                  <th scope="col" class="px-6 py-4 font-semibold">
+                    Заявитель (Фермерское хозяйство)
+                  </th>
+                  <th scope="col" class="px-6 py-4 font-semibold">
+                    Запрошено (₸)
+                  </th>
+                  <th scope="col" class="px-6 py-4 font-semibold text-center">
+                    ИИ-Скор
+                  </th>
+                  <th scope="col" class="px-6 py-4 font-semibold">
+                    Рекомендация ИИ
+                  </th>
+                  <th scope="col" class="px-6 py-4 font-semibold">Действие</th>
+                </tr>
+              </thead>
+              <tbody id="table-body" class="divide-y divide-gray-100"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./js/api.js"></script>
+    <script src="./js/dom.js"></script>
+  </body>
+</html>
